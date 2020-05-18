@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "NeboLCD.h"
+#include <NeboLCD.h>
 
 enum neboRadioModes {
   NEBO_RADIO_MODE_MHZ,  // 0
