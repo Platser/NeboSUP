@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="RadioLCD_modes.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1099"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#00c2ff;stroke-opacity:1;fill:#00c2ff;fill-opacity:1"
+         id="path1097" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1053"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#008080;fill-opacity:1"
+         id="path1051" />
+    </marker>
+    <marker
+       inkscape:collect="always"
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path922"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path919"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow2Lstart-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart">
+      <path
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path919-8" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow2Lend-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path922-7" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1099-1"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1097-9"
+         style="fill:#00c2ff;fill-opacity:1;fill-rule:evenodd;stroke:#00c2ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1099-6"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1097-2"
+         style="fill:#00c2ff;fill-opacity:1;fill-rule:evenodd;stroke:#00c2ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1099-4"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1097-8"
+         style="fill:#00c2ff;fill-opacity:1;fill-rule:evenodd;stroke:#00c2ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="1236"
+     inkscape:window-height="1408"
+     inkscape:window-width="1315"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="g913"
+     inkscape:document-units="mm"
+     inkscape:cy="291.20662"
+     inkscape:cx="323.70271"
+     inkscape:zoom="1.979899"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:snap-text-baseline="false"
+     inkscape:snap-grids="true"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="17.658575,252.16191"
+       orientation="1,0"
+       id="guide74" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Слой 1">
+    <g
+       id="g913">
+      <path
+         id="path202"
+         d="M 67.485556,121.474 97.553377,101.16152"
+         style="fill:#00c2ff;fill-opacity:1;stroke:#00c2ff;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1099)" />
+      <rect
+         style="fill:#c5ffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+         id="rect904"
+         width="28.731462"
+         height="7.7508168"
+         x="33.793381"
+         y="121.93582" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;line-height:0;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         x="34.728828"
+         y="125.00941"
+         id="text14"><tspan
+           sodipodi:role="line"
+           x="34.728828"
+           y="125.00941"
+           style="font-size:2.82222px;line-height:1.25;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           id="tspan16">128.300  128.<tspan
+   style="font-weight:bold;font-size:2.82222px;fill:#ff0000;stroke:none;stroke-opacity:1"
+   id="tspan28">250</tspan></tspan><tspan
+           sodipodi:role="line"
+           x="34.728828"
+           y="128.22081"
+           style="font-size:2.82222px;line-height:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           id="tspan20">COM1 <tspan
+   style="font-size:2.82222px;fill:#cccccc;stroke:none;stroke-opacity:1"
+   id="tspan22">TR</tspan>    <tspan
+   style="font-size:2.82222px;fill:#cccccc;stroke:none;stroke-opacity:1"
+   id="tspan26">Ch:32</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         x="20.852108"
+         y="118.009"
+         id="text25"><tspan
+           sodipodi:role="line"
+           id="tspan23"
+           x="20.852108"
+           y="118.009"
+           style="font-size:2.11667px;stroke-width:0.264583">inputFrequencyMode = NEBO_RADIO_MODE_SET_SB_KHZ</tspan><tspan
+           id="tspan74"
+           sodipodi:role="line"
+           x="20.852108"
+           y="120.65483"
+           style="font-size:2.11667px;stroke-width:0.264583">radioState = NEBO_RADIO_MODE_SB </tspan></text>
+      <rect
+         y="96.200752"
+         x="33.599247"
+         height="7.7508168"
+         width="28.731461"
+         id="rect904-5"
+         style="fill:#c5ffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1" />
+      <text
+         id="text14-1"
+         y="99.274353"
+         x="34.534695"
+         style="font-size:2.82223px;line-height:0;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan16-6"
+           style="font-size:2.82223px;line-height:1.25;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           y="99.274353"
+           x="34.534695"
+           sodipodi:role="line">128.300  <tspan
+   style="font-weight:bold;fill:#ff0000"
+   id="tspan66">128</tspan>.250</tspan><tspan
+           id="tspan20-2"
+           style="font-size:2.82223px;line-height:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           y="102.48575"
+           x="34.534695"
+           sodipodi:role="line">COM1 <tspan
+   id="tspan22-3"
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1">TR</tspan>    <tspan
+   id="tspan26-6"
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1">Ch:32</tspan></tspan></text>
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
+         d="m 45.621818,105.2171 v 9.48924"
+         id="path76"
+         sodipodi:nodetypes="cc" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         x="47.878838"
+         y="110.80872"
+         id="text1349"><tspan
+           sodipodi:role="line"
+           id="tspan1347"
+           x="47.878838"
+           y="110.80872"
+           style="font-weight:bold;font-size:2.11667px;fill:#0000ff;stroke-width:0.264583">switchMhzKhz()</tspan></text>
+      <text
+         id="text25-2"
+         y="92.668236"
+         x="20.055687"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           style="font-size:2.11667px;stroke-width:0.264583"
+           y="92.668236"
+           x="20.055687"
+           id="tspan23-4"
+           sodipodi:role="line">inputFrequencyMode = NEBO_RADIO_MODE_SET_SB_MHZ</tspan><tspan
+           style="font-size:2.11667px;stroke-width:0.264583"
+           y="95.314072"
+           x="20.055687"
+           sodipodi:role="line"
+           id="tspan74-7">radioState = NEBO_RADIO_MODE_SB </tspan></text>
+      <rect
+         y="121.61116"
+         x="102.33327"
+         height="7.7508168"
+         width="28.731461"
+         id="rect904-6"
+         style="fill:#c5ffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1" />
+      <text
+         id="text14-9"
+         y="124.68475"
+         x="103.26871"
+         style="font-size:2.82223px;line-height:0;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan16-7"
+           style="font-size:2.82223px;line-height:1.25;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           y="124.68475"
+           x="103.26871"
+           sodipodi:role="line">128.<tspan
+   id="tspan194"
+   style="font-weight:bold;fill:#ff0000">300</tspan>  <tspan
+   id="tspan2284"
+   style="fill:#cccccc">128.250</tspan></tspan><tspan
+           id="tspan20-7"
+           style="font-size:2.82223px;line-height:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           y="127.89615"
+           x="103.26871"
+           sodipodi:role="line">COM1 <tspan
+   id="tspan22-9"
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1">TR</tspan>    <tspan
+   id="tspan26-9"
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1">Ch:32</tspan></tspan></text>
+      <text
+         id="text25-27"
+         y="117.68433"
+         x="89.391991"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           style="font-size:2.11667px;stroke-width:0.264583"
+           y="117.68433"
+           x="89.391991"
+           id="tspan23-7"
+           sodipodi:role="line">inputFrequencyMode = NEBO_RADIO_MODE_SET_FR_KHZ</tspan><tspan
+           style="font-size:2.11667px;stroke-width:0.264583"
+           y="120.33017"
+           x="89.391991"
+           sodipodi:role="line"
+           id="tspan74-9">radioState = NEBO_RADIO_MODE_FR </tspan></text>
+      <rect
+         style="fill:#c5ffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+         id="rect904-5-5"
+         width="28.731461"
+         height="7.7508168"
+         x="102.13914"
+         y="95.876099" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;line-height:0;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         x="103.07457"
+         y="98.949692"
+         id="text14-1-0"><tspan
+           sodipodi:role="line"
+           x="103.07457"
+           y="98.949692"
+           style="font-size:2.82223px;line-height:1.25;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           id="tspan16-6-3"><tspan
+   id="tspan198"
+   style="font-weight:bold;fill:#ff0000">128</tspan>.300  <tspan
+   id="tspan2286"
+   style="fill:#cccccc">128.250</tspan></tspan><tspan
+           sodipodi:role="line"
+           x="103.07457"
+           y="102.16109"
+           style="font-size:2.82223px;line-height:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           id="tspan20-2-5">COM1 <tspan
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+   id="tspan22-3-4">TR</tspan>    <tspan
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+   id="tspan26-6-4">Ch:32</tspan></tspan></text>
+      <path
+         sodipodi:nodetypes="cc"
+         id="path76-7"
+         d="m 114.1617,104.89244 v 9.48924"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Lstart-9);marker-end:url(#Arrow2Lend-3)" />
+      <text
+         id="text1349-1"
+         y="110.48407"
+         x="116.41872"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           style="font-weight:bold;font-size:2.11667px;fill:#0000ff;stroke-width:0.264583"
+           y="110.48407"
+           x="116.41872"
+           id="tspan1347-5"
+           sodipodi:role="line">switchMhzKhz()</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         x="88.595573"
+         y="92.343575"
+         id="text25-2-8"><tspan
+           sodipodi:role="line"
+           id="tspan23-4-5"
+           x="88.595573"
+           y="92.343575"
+           style="font-size:2.11667px;stroke-width:0.264583">inputFrequencyMode = NEBO_RADIO_MODE_SET_FR_MHZ</tspan><tspan
+           id="tspan74-7-6"
+           sodipodi:role="line"
+           x="88.595573"
+           y="94.98941"
+           style="font-size:2.11667px;stroke-width:0.264583">radioState = NEBO_RADIO_MODE_FR </tspan></text>
+      <rect
+         style="fill:#c5ffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+         id="rect904-5-0"
+         width="28.731461"
+         height="7.7508168"
+         x="33.581799"
+         y="26.825518" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;line-height:0;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         x="34.517246"
+         y="29.899118"
+         id="text14-1-2"><tspan
+           sodipodi:role="line"
+           x="34.517246"
+           y="29.899118"
+           style="font-size:2.82223px;line-height:1.25;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           id="tspan16-6-7">128.300  128.250</tspan><tspan
+           sodipodi:role="line"
+           x="34.517246"
+           y="33.074127"
+           style="font-size:2.82223px;line-height:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+           id="tspan20-2-9">COM1 <tspan
+   style="font-size:2.82223px;fill:#cccccc;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+   id="tspan22-3-0">TR</tspan>    Ch:32</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+         x="20.038239"
+         y="23.293001"
+         id="text25-2-6"><tspan
+           sodipodi:role="line"
+           id="tspan23-4-57"
+           x="20.038239"
+           y="23.293001"
+           style="font-size:2.11667px;stroke-width:0.264583">inputFrequencyMode = NEBO_RADIO_MODE_SET_SB_MHZ</tspan><tspan
+           id="tspan74-7-3"
+           sodipodi:role="line"
+           x="20.038239"
+           y="25.938837"
+           style="font-size:2.11667px;stroke-width:0.264583">radioState = NEBO_RADIO_MODE_SB </tspan></text>
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:#00c2ff;fill-opacity:1;stroke:#00c2ff;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1099-1)"
+       d="m 65.662165,97.64446 31.136903,0.267269"
+       id="path202-4" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:#00c2ff;fill-opacity:1;stroke:#00c2ff;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1099-6)"
+       d="M 96.531796,99.782616 66.063069,99.648981"
+       id="path202-0" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:#00c2ff;fill-opacity:1;stroke:#00c2ff;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1099-4)"
+       d="M 98.937222,122.76779 66.063067,101.51987"
+       id="path202-6" />
+    <text
+       id="text1349-0"
+       y="105.41747"
+       x="74.430389"
+       style="font-size:2.11667px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;font-size:2.11667px;fill:#0000ff;stroke-width:0.264583"
+         y="105.41747"
+         x="74.430389"
+         id="tspan1347-1"
+         sodipodi:role="line">switchSbFr()</tspan></text>
+  </g>
+</svg>
