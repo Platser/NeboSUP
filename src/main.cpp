@@ -17,14 +17,54 @@
 #define PIN_BTN_LEFT 6
 #define PIN_BTN_RIGHT 7
 
-
 enum myEncStates {
   NONE,
   PLUS,
   MINUS,
   PUSH,
-  PUSH_LONG
+  PUSH_LONG,
 };
+
+enum displays {
+  COM1,
+  NAV1,
+  COM2,
+  NAV2
+} display;
+
+void nextDisplay() {
+  switch (display) {
+    case COM1:
+      display = NAV1;
+      break;
+    case NAV1:
+      display = COM2;
+      break;
+    case COM2:
+      display = NAV2;
+      break;
+    case NAV2:
+      display = COM1;
+      break;
+  }
+}
+
+void prevDisplay() {
+  switch (display) {
+    case COM1:
+      display = NAV2;
+      break;
+    case NAV2:
+      display = COM2;
+      break;
+    case COM2:
+      display = NAV1;
+      break;
+    case NAV1:
+      display = COM1;
+      break;
+  }
+}
 
 #define ENC_STEP 4
 
@@ -87,17 +127,39 @@ MyEnc enc_right(PIN_ENC_RIGHT_1, PIN_ENC_RIGHT_2, PIN_ENC_RIGHT_BTN);
 uint32_t timer;
 
 NeboLCD lcd;
-RadioLCD com1Lcd;
+RadioLCD com1;
+RadioLCD nav1;
+RadioLCD com2;
+RadioLCD nav2;
+
+void *radio;
 
 byte counter;
 
 void setup() {
-  // put your setup code here, to run once:
+    // put your setup code here, to run once:
   Serial.begin(115200);
   lcd.init();
-  com1Lcd.init(&lcd);
+  display = COM1;
+  // COM1
+  com1.init(&lcd);
+  com1.name = "COM1";
+  //com1.show();
+  // NAV1
+  nav1.init(&lcd);
+  nav1.name = "NAV1";
+  //nav1.show();
+  // COM2
+  com2.init(&lcd);
+  com2.name = "COM2";
+  //com2.show();
+  // NAV2
+  nav2.init(&lcd);
+  nav2.name = "NAV2";
+  //nav2.show();
+
   timer = millis();
-  com1Lcd.show();
+
   btn_left.attach(PIN_BTN_LEFT, INPUT_PULLUP);
   btn_left.interval(25);
   btn_right.attach(PIN_BTN_RIGHT, INPUT_PULLUP);
@@ -115,25 +177,58 @@ void loop() {
   if ( btn_left.fell() ) {
     counter++;
     Serial.println(counter);
-    com1Lcd.swapFrAndSb();
+    com1.swapFrAndSb();
   }
+
   myEncStates enc_right_state = enc_right.read();
   switch (enc_right_state)
   {
   case PLUS:
-    com1Lcd.incr();
+    com1.incr();
     break;
   case MINUS:
-    com1Lcd.decr();
+    com1.decr();
     break;
   case PUSH:
-    com1Lcd.swKM();
+    com1.swKM();
     break;
   case PUSH_LONG:
-    com1Lcd.switchKhzStep();
+    com1.switchKhzStep();
     break;
   default:
     break;
+  }
+
+  myEncStates enc_left_state = enc_left.read();
+  switch (enc_left_state)
+  {
+  case PLUS:
+    nextDisplay();
+    break;
+  case MINUS:
+    prevDisplay();
+    break;
+  case PUSH:
+    break;
+  case PUSH_LONG:
+    break;
+  default:
+    break;
+  }
+
+  switch (display){
+    case COM1:
+      com1.show();
+      break;
+    case NAV1:
+      nav1.show();
+      break;
+    case COM2:
+      com2.show();
+      break;
+    case NAV2:
+      nav2.show();
+      break;
   }
 
   lcd.render();

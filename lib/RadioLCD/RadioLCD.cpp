@@ -42,6 +42,9 @@ void RadioLCD::init( NeboLCD *lcd ) {
   this->_sbK = 0;
   this->_radioMode = NEBO_RADIO_MODE_MHZ;
   this->_radioState = NEBO_RADIO_STATE_SB;
+  this->name = "";
+  this->_lcd->setBlink(0,0);
+  this->_lcd->setBlink(1,0);
 }
 
 void RadioLCD::swKM() {
@@ -160,7 +163,7 @@ void RadioLCD::show() {
     this->blinkSbK();
   }
   this->_lcd->setLine(0,this->getFr()+String("  ")+this->getSb());
-  this->_lcd->setLine(1,"                ");
+  this->_lcd->setLine(1,this->name);
 }
 
 void RadioLCD::blinkSbK() {

@@ -35,6 +35,7 @@ class RadioLCD
     void incr();
     void decr();
     void swKM(); // switch between KHz and MHz input
+    String name;
   private:
     NeboLCD *_lcd;
     int _frM;
