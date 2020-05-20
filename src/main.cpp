@@ -17,12 +17,39 @@
 #define PIN_BTN_LEFT 6
 #define PIN_BTN_RIGHT 7
 
+#define ENC_STEP 4
+
+void nextDisplay();
+void prevDisplay();
+
+enum hwEvents {
+  EMPTY_HW_EVENT,
+  BTN_L_PUSH,
+  BTN_L_LPUSH,
+  ENC_L_INC,
+  ENC_L_DEC,
+  ENC_L_PUSH,
+  ENC_L_LPUSH,
+  BTN_R_PUSH,
+  BTN_R_LPUSH,
+  ENC_R_INC,
+  ENC_R_DEC,
+  ENC_R_PUSH,
+  ENC_R_LPUSH
+};
+
+enum btnEvents {
+  EMPTY_BTN_EVENT,
+  BTN_PUSH,
+  BTN_LPUSH
+};
+
 enum myEncStates {
-  NONE,
+  EMPTY_ENC_EVENT,
   PLUS,
   MINUS,
   PUSH,
-  PUSH_LONG,
+  PUSH_LONG
 };
 
 enum displays {
@@ -31,42 +58,6 @@ enum displays {
   COM2,
   NAV2
 } display;
-
-void nextDisplay() {
-  switch (display) {
-    case COM1:
-      display = NAV1;
-      break;
-    case NAV1:
-      display = COM2;
-      break;
-    case COM2:
-      display = NAV2;
-      break;
-    case NAV2:
-      display = COM1;
-      break;
-  }
-}
-
-void prevDisplay() {
-  switch (display) {
-    case COM1:
-      display = NAV2;
-      break;
-    case NAV2:
-      display = COM2;
-      break;
-    case COM2:
-      display = NAV1;
-      break;
-    case NAV1:
-      display = COM1;
-      break;
-  }
-}
-
-#define ENC_STEP 4
 
 class MyEnc {
   public:
@@ -116,7 +107,7 @@ myEncStates MyEnc::read() {
       return MINUS;
     }
   }
-  return NONE;
+  return EMPTY_ENC_EVENT;
 }
 
 Bounce btn_left = Bounce();
@@ -136,6 +127,222 @@ void *radio;
 
 byte counter;
 
+btnEvents readBtnEvent( Bounce *btn ) {
+  btn->update();
+  if ( btn->fell() ) {
+    return BTN_PUSH;
+  } else {
+    return EMPTY_BTN_EVENT;
+  }
+}
+
+hwEvents readHwEvent() {
+  switch( readBtnEvent( &btn_left ) ) {
+    case BTN_PUSH:
+      return BTN_L_PUSH;
+      break;
+    case BTN_LPUSH:
+      return BTN_L_LPUSH;
+      break;
+    default:
+      break;
+  }
+  switch( readBtnEvent( &btn_right ) ) {
+    case BTN_PUSH:
+      return BTN_R_PUSH;
+      break;
+    case BTN_LPUSH:
+      return BTN_R_LPUSH;
+      break;
+    default:
+      break;
+  }
+  switch( enc_left.read() ) {
+    case PLUS:
+      return ENC_L_INC;
+      break;
+    case MINUS:
+      return ENC_L_DEC;
+      break;
+    case PUSH:
+      return ENC_L_PUSH;
+      break;
+    case PUSH_LONG:
+      return ENC_L_LPUSH;
+      break;
+    default:
+      break;
+  }
+  switch( enc_right.read() ) {
+    case PLUS:
+      return ENC_R_INC;
+      break;
+    case MINUS:
+      return ENC_R_DEC;
+      break;
+    case PUSH:
+      return ENC_R_PUSH;
+      break;
+    case PUSH_LONG:
+      return ENC_R_LPUSH;
+      break;
+    default:
+      break;
+  }
+  return EMPTY_HW_EVENT;
+}
+
+void handleEvent( hwEvents event ) {
+  switch( event ) {
+    case ENC_L_INC:
+      nextDisplay();
+      break;
+    case ENC_L_DEC:
+      prevDisplay();
+      break;
+    default:
+      break;
+  }
+  if ( display == COM1 ) {
+    switch( event ) {
+      case BTN_L_PUSH:
+        com1.swapFrAndSb();
+        break;
+      case ENC_R_INC:
+        com1.incr();
+        break;
+      case ENC_R_DEC:
+        com1.decr();
+        break;
+      case ENC_R_PUSH:
+        com1.swKM();
+        break;
+      case ENC_R_LPUSH:
+        com1.switchKhzStep();
+        break;
+      default:
+        break;
+    }
+  }
+  if ( display == COM2 ) {
+    switch( event ) {
+      case BTN_L_PUSH:
+        com2.swapFrAndSb();
+        break;
+      case ENC_R_INC:
+        com2.incr();
+        break;
+      case ENC_R_DEC:
+        com2.decr();
+        break;
+      case ENC_R_PUSH:
+        com2.swKM();
+        break;
+      case ENC_R_LPUSH:
+        com2.switchKhzStep();
+        break;
+      default:
+        break;
+    }
+  }
+  if ( display == NAV1 ) {
+    switch( event ) {
+      case BTN_L_PUSH:
+        nav1.swapFrAndSb();
+        break;
+      case ENC_R_INC:
+        nav1.incr();
+        break;
+      case ENC_R_DEC:
+        nav1.decr();
+        break;
+      case ENC_R_PUSH:
+        nav1.swKM();
+        break;
+      case ENC_R_LPUSH:
+        nav1.switchKhzStep();
+        break;
+      default:
+        break;
+    }
+  }
+  if ( display == NAV2 ) {
+    switch( event ) {
+      case BTN_L_PUSH:
+        nav2.swapFrAndSb();
+        break;
+      case ENC_R_INC:
+        nav2.incr();
+        break;
+      case ENC_R_DEC:
+        nav2.decr();
+        break;
+      case ENC_R_PUSH:
+        nav2.swKM();
+        break;
+      case ENC_R_LPUSH:
+        nav2.switchKhzStep();
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+
+void nextDisplay() {
+  switch (display) {
+    case COM1:
+      display = NAV1;
+      break;
+    case NAV1:
+      display = COM2;
+      break;
+    case COM2:
+      display = NAV2;
+      break;
+    case NAV2:
+      display = COM1;
+      break;
+  }
+}
+
+void prevDisplay() {
+  switch (display) {
+    case COM1:
+      display = NAV2;
+      break;
+    case NAV2:
+      display = COM2;
+      break;
+    case COM2:
+      display = NAV1;
+      break;
+    case NAV1:
+      display = COM1;
+      break;
+  }
+}
+
+void showDisplay() {
+  switch (display){
+    case COM1:
+      com1.show();
+      break;
+    case NAV1:
+      nav1.show();
+      break;
+    case COM2:
+      com2.show();
+      break;
+    case NAV2:
+      nav2.show();
+      break;
+  }
+}
+
+
+
 void setup() {
     // put your setup code here, to run once:
   Serial.begin(115200);
@@ -144,19 +351,15 @@ void setup() {
   // COM1
   com1.init(&lcd);
   com1.name = "COM1";
-  //com1.show();
   // NAV1
   nav1.init(&lcd);
   nav1.name = "NAV1";
-  //nav1.show();
   // COM2
   com2.init(&lcd);
   com2.name = "COM2";
-  //com2.show();
   // NAV2
   nav2.init(&lcd);
   nav2.name = "NAV2";
-  //nav2.show();
 
   timer = millis();
 
@@ -172,83 +375,9 @@ void setup() {
 bool flag = false;
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  btn_left.update();
-  if ( btn_left.fell() ) {
-    counter++;
-    Serial.println(counter);
-    com1.swapFrAndSb();
-  }
-
-  myEncStates enc_right_state = enc_right.read();
-  switch (enc_right_state)
-  {
-  case PLUS:
-    com1.incr();
-    break;
-  case MINUS:
-    com1.decr();
-    break;
-  case PUSH:
-    com1.swKM();
-    break;
-  case PUSH_LONG:
-    com1.switchKhzStep();
-    break;
-  default:
-    break;
-  }
-
-  myEncStates enc_left_state = enc_left.read();
-  switch (enc_left_state)
-  {
-  case PLUS:
-    nextDisplay();
-    break;
-  case MINUS:
-    prevDisplay();
-    break;
-  case PUSH:
-    break;
-  case PUSH_LONG:
-    break;
-  default:
-    break;
-  }
-
-  switch (display){
-    case COM1:
-      com1.show();
-      break;
-    case NAV1:
-      nav1.show();
-      break;
-    case COM2:
-      com2.show();
-      break;
-    case NAV2:
-      nav2.show();
-      break;
-  }
-
+  handleEvent(
+    readHwEvent()
+  );
+  showDisplay();
   lcd.render();
-
- /* if( millis() - timer > 5000 ) {
-    Serial.println("----------------");
-    Serial.println(lcd.blinkMask[0]);
-    Serial.println(lcd.blinkMask[1]);
-
-    timer = millis();
-    if( flag ) {
-      com1Lcd.blinkSbK();
-      flag = false;
-      Serial.println("blinkSbK");
-    } else {
-     com1Lcd.blinkSbM();
-      flag = true;
-      Serial.println("blinkSbM");
-    }
-  }*/
-
-
 }
