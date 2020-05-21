@@ -192,6 +192,28 @@ hwEvents readHwEvent() {
   return EMPTY_HW_EVENT;
 }
 
+void handleEventCom( RadioLCD *com, hwEvents event ) {
+  switch( event ) {
+    case BTN_L_PUSH:
+      com->swapFrAndSb();
+      break;
+    case ENC_R_INC:
+      com->incr();
+      break;
+    case ENC_R_DEC:
+      com->decr();
+      break;
+    case ENC_R_PUSH:
+      com->swKM();
+      break;
+    case ENC_R_LPUSH:
+      com->switchKhzStep();
+      break;
+    default:
+      break;
+  }
+}
+
 void handleEvent( hwEvents event ) {
   switch( event ) {
     case ENC_L_INC:
@@ -203,89 +225,21 @@ void handleEvent( hwEvents event ) {
     default:
       break;
   }
-  if ( display == COM1 ) {
-    switch( event ) {
-      case BTN_L_PUSH:
-        com1.swapFrAndSb();
-        break;
-      case ENC_R_INC:
-        com1.incr();
-        break;
-      case ENC_R_DEC:
-        com1.decr();
-        break;
-      case ENC_R_PUSH:
-        com1.swKM();
-        break;
-      case ENC_R_LPUSH:
-        com1.switchKhzStep();
-        break;
-      default:
-        break;
-    }
-  }
-  if ( display == COM2 ) {
-    switch( event ) {
-      case BTN_L_PUSH:
-        com2.swapFrAndSb();
-        break;
-      case ENC_R_INC:
-        com2.incr();
-        break;
-      case ENC_R_DEC:
-        com2.decr();
-        break;
-      case ENC_R_PUSH:
-        com2.swKM();
-        break;
-      case ENC_R_LPUSH:
-        com2.switchKhzStep();
-        break;
-      default:
-        break;
-    }
-  }
-  if ( display == NAV1 ) {
-    switch( event ) {
-      case BTN_L_PUSH:
-        nav1.swapFrAndSb();
-        break;
-      case ENC_R_INC:
-        nav1.incr();
-        break;
-      case ENC_R_DEC:
-        nav1.decr();
-        break;
-      case ENC_R_PUSH:
-        nav1.swKM();
-        break;
-      case ENC_R_LPUSH:
-        nav1.switchKhzStep();
-        break;
-      default:
-        break;
-    }
-  }
-  if ( display == NAV2 ) {
-    switch( event ) {
-      case BTN_L_PUSH:
-        nav2.swapFrAndSb();
-        break;
-      case ENC_R_INC:
-        nav2.incr();
-        break;
-      case ENC_R_DEC:
-        nav2.decr();
-        break;
-      case ENC_R_PUSH:
-        nav2.swKM();
-        break;
-      case ENC_R_LPUSH:
-        nav2.switchKhzStep();
-        break;
-      default:
-        break;
-    }
+  switch( display ) {
+    case COM1:
+      handleEventCom(&com1, event);
+      break;
+    case COM2:
+      handleEventCom(&com2, event);
+      break;
+    case NAV1:
+      handleEventCom(&nav1, event);
+      break;
+    case NAV2:
+      handleEventCom(&nav2, event);
+      break;
+    default:
+      break;
   }
 }
 
