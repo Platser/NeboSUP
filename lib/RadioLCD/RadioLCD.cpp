@@ -39,12 +39,63 @@ void RadioLCD::init( NeboLCD *lcd ) {
   this->_frM = 118;
   this->_frK = 0;
   this->_sbM = 136;
-  this->_sbK = 0;
+  this->_sbK = 950;
+  this->_frMmin = 118;
+  this->_frMmax = 136;
   this->_radioMode = NEBO_RADIO_MODE_MHZ;
   this->_radioState = NEBO_RADIO_STATE_SB;
-  this->name = "";
+  this->_name = "";
   this->_lcd->setBlink(0,0);
   this->_lcd->setBlink(1,0);
+  this->_lastCommand = "";
+}
+
+void RadioLCD::setName( String name ) {
+  this->_name = name;
+  if ( name.startsWith("COM") ) {
+    this->_frM = 118;
+    this->_sbM = 136;
+    this->_frMmin = 118;
+    this->_frMmax = 136;
+    return;
+  }
+  if ( name.startsWith("NAV") ) {
+    this->_frM = 108;
+    this->_sbM = 117;
+    this->_frMmin = 108;
+    this->_frMmax = 117;
+    return;
+  }
+  return;
+}
+
+String RadioLCD::_link2fsCmdPrfix() {
+  if ( this->_name == "COM1" ) {
+    return (String) "A05";
+  }
+  if ( this->_name == "COM2" ) {
+    return (String) "A11";
+  }
+  if ( this->_name == "NAV1" ) {
+    return (String) "A17";
+  }
+  if ( this->_name == "NAV2" ) {
+    return (String) "A23";
+  }
+  return "ERROR_UNKNOWN_RADIO_NAME";
+}
+
+String RadioLCD::_textFrForLink2fs() {
+  return String((uint32_t)(this->_frM-100)*(uint32_t)100+this->_frK/10);
+}
+
+void RadioLCD::link2fsSend() {
+  //String command = this->_link2fsCmdPrfix();
+  String command = this->_link2fsCmdPrfix()+this->_textFrForLink2fs();
+  if ( command != this->_lastCommand ) {
+    this->_lastCommand = command;
+    Serial.println(command);
+  }
 }
 
 void RadioLCD::swKM() {
@@ -88,13 +139,13 @@ void RadioLCD::decrSbK() {
 
 void RadioLCD::incrSbM() {
   this->_sbM += 1;
-  if ( this->_sbM > 136 ) { this->_sbM = 136; }
+  if ( this->_sbM > this->_frMmax ) { this->_sbM = this->_frMmin; }
   this->show();
 }
 
 void RadioLCD::decrSbM() {
   this->_sbM -= 1;
-  if ( this->_sbM < 118 ) { this->_sbM = 118; }
+  if ( this->_sbM < this->_frMmin ) { this->_sbM = this->_frMmax; }
   this->show();
 }
 
@@ -163,7 +214,8 @@ void RadioLCD::show() {
     this->blinkSbK();
   }
   this->_lcd->setLine(0,this->getFr()+String("  ")+this->getSb());
-  this->_lcd->setLine(1,this->name);
+  this->_lcd->setLine(1,this->_name);
+  this->link2fsSend();
 }
 
 void RadioLCD::blinkSbK() {

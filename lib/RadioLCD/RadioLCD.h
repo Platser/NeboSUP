@@ -35,7 +35,8 @@ class RadioLCD
     void incr();
     void decr();
     void swKM(); // switch between KHz and MHz input
-    String name;
+    void link2fsSend();
+    void setName(String name);
   private:
     NeboLCD *_lcd;
     int _frM;
@@ -45,4 +46,10 @@ class RadioLCD
     byte _khzStep = 50; // 50 or 25
     neboRadioModes _radioMode;
     neboRadioStates _radioState;
+    String _link2fsCmdPrfix();
+    String _textFrForLink2fs();
+    String _lastCommand;
+    String _name;
+    int _frMmin;
+    int _frMmax;
 };

@@ -304,16 +304,16 @@ void setup() {
   display = COM1;
   // COM1
   com1.init(&lcd);
-  com1.name = "COM1";
+  com1.setName("COM1");
   // NAV1
   nav1.init(&lcd);
-  nav1.name = "NAV1";
+  nav1.setName("NAV1");
   // COM2
   com2.init(&lcd);
-  com2.name = "COM2";
+  com2.setName("COM2");
   // NAV2
   nav2.init(&lcd);
-  nav2.name = "NAV2";
+  nav2.setName("NAV2");
 
   timer = millis();
 
