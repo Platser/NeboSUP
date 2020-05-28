@@ -3,6 +3,8 @@
 #include <RadioLCD.h>
 #include <Bounce2.h>
 #include <Encoder.h>
+#include <AutopilotLCD.h>
+
 
 
 
@@ -56,7 +58,8 @@ enum displays {
   COM1,
   NAV1,
   COM2,
-  NAV2
+  NAV2,
+  AUTOPILOT
 } display;
 
 class MyEnc {
@@ -122,6 +125,7 @@ RadioLCD com1;
 RadioLCD nav1;
 RadioLCD com2;
 RadioLCD nav2;
+AutopilotLCD autopilot;
 
 void *radio;
 
@@ -238,6 +242,25 @@ void handleEvent( hwEvents event ) {
     case NAV2:
       handleEventCom(&nav2, event);
       break;
+    case AUTOPILOT:
+      switch( event ) {
+        case BTN_L_PUSH:
+          break;
+        case ENC_R_INC:
+          autopilot.incr();
+          break;
+        case ENC_R_DEC:
+          autopilot.decr();
+          break;
+        case ENC_R_PUSH:
+          autopilot.swEdit();
+          break;
+        case ENC_R_LPUSH:
+          break;
+        default:
+          break;
+      }
+      break;
     default:
       break;
   }
@@ -246,6 +269,9 @@ void handleEvent( hwEvents event ) {
 
 void nextDisplay() {
   switch (display) {
+    case AUTOPILOT:
+      display = COM1;
+      break;
     case COM1:
       display = NAV1;
       break;
@@ -256,15 +282,18 @@ void nextDisplay() {
       display = NAV2;
       break;
     case NAV2:
-      display = COM1;
+      display = AUTOPILOT;
       break;
   }
 }
 
 void prevDisplay() {
   switch (display) {
-    case COM1:
+    case AUTOPILOT:
       display = NAV2;
+      break;
+    case COM1:
+      display = AUTOPILOT;
       break;
     case NAV2:
       display = COM2;
@@ -292,6 +321,9 @@ void showDisplay() {
     case NAV2:
       nav2.show();
       break;
+    case AUTOPILOT:
+      autopilot.show();
+      break;
   }
 }
 
@@ -314,6 +346,9 @@ void setup() {
   // NAV2
   nav2.init(&lcd);
   nav2.setName("NAV2");
+
+  // Autopilot
+  autopilot.init(&lcd);
 
   timer = millis();
 

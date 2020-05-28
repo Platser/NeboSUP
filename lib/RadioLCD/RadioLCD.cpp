@@ -214,7 +214,7 @@ void RadioLCD::show() {
     this->blinkSbK();
   }
   this->_lcd->setLine(0,this->getFr()+String("  ")+this->getSb());
-  this->_lcd->setLine(1,this->_name);
+  this->_lcd->setLine(1,this->_name+String("                "));
   this->link2fsSend();
 }
 
